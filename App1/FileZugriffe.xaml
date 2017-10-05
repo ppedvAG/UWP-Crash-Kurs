@@ -15,6 +15,8 @@
         <Button Content="Button" HorizontalAlignment="Left" Margin="43,179,0,0" VerticalAlignment="Top"
                 Click="Button_Click2Async"/>
         <Image Name="img1" HorizontalAlignment="Left" Height="618" Margin="382,16,0,0" VerticalAlignment="Top" Width="635"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="36,320,0,0" VerticalAlignment="Top"
+                Click="Button3_ClickAsync"/>
 
     </Grid>
 </Page>

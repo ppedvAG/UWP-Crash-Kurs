@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.Storage.Pickers;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -32,19 +33,38 @@ namespace App1
         private async void Button_ClickAsync(object sender, RoutedEventArgs e)
         {
             //var folder = KnownFolders.PicturesLibrary;
-       
+
             var folder = ApplicationData.Current.LocalFolder;
-            var f =await folder.CreateFileAsync("aracom.txt", CreationCollisionOption.OpenIfExists);
+            var f = await folder.CreateFileAsync("aracom.txt", CreationCollisionOption.OpenIfExists);
             await FileIO.AppendTextAsync(f, Text1.Text + ";" + DateTime.Now.ToString() + Environment.NewLine);
         }
 
         private async void Button_Click2Async(object sender, RoutedEventArgs e)
         {
-            var f = await StorageFile.GetFileFromApplicationUriAsync(new Uri(this.BaseUri,"Assets/schwein.jpg"));
-            var fs=await f.OpenAsync(FileAccessMode.Read);
+            var f = await StorageFile.GetFileFromApplicationUriAsync(new Uri(this.BaseUri, "Assets/schwein.jpg"));
+            var fs = await f.OpenAsync(FileAccessMode.Read);
             var bmp = new BitmapImage();
             bmp.SetSource(fs);
             img1.Source = bmp;
+        }
+
+        private async void Button3_ClickAsync(object sender, RoutedEventArgs e)
+        {
+            var picker = new FileOpenPicker();
+            picker.ViewMode = PickerViewMode.Thumbnail;
+            picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+            picker.FileTypeFilter.Add(".jpg");
+            var result = await picker.PickSingleFileAsync();
+            if (result != null)
+            {
+                var tn = await result.GetThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.PicturesView,
+                     200,
+                     Windows.Storage.FileProperties.ThumbnailOptions.UseCurrentScale);
+                var bmp = new BitmapImage();
+                bmp.SetSource(tn);
+                img1.Source = bmp;
+            }
+
         }
     }
 }
