@@ -33,6 +33,7 @@ namespace App1
             var client = new SyndicationClient();
             var url = new Uri("https://www.heise.de/newsticker/heise-atom.xml");
             var feed =await client.RetrieveFeedAsync(url);
+         
             liste1.ItemsSource = feed.Items;
         }
     }

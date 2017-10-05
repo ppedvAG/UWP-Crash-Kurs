@@ -20,7 +20,7 @@
         </Button>
         <ListBox 
             x:Name="liste1"
-            DisplayMemberPath="Text"
+            DisplayMemberPath="Title.Text"
             HorizontalAlignment="Left" Height="526" Margin="-7,126,0,0" VerticalAlignment="Top"/>
 
     </Grid>
