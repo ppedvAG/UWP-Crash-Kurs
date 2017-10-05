@@ -12,6 +12,9 @@
                 Click="Button_ClickAsync"/>
         <TextBox Name="Text1" HorizontalAlignment="Left" Margin="161,61,0,0" Text="TextBox" 
                  VerticalAlignment="Top"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="43,179,0,0" VerticalAlignment="Top"
+                Click="Button_Click2Async"/>
+        <Image Name="img1" HorizontalAlignment="Left" Height="618" Margin="382,16,0,0" VerticalAlignment="Top" Width="635"/>
 
     </Grid>
 </Page>

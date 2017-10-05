@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
@@ -30,9 +31,20 @@ namespace App1
 
         private async void Button_ClickAsync(object sender, RoutedEventArgs e)
         {
+            //var folder = KnownFolders.PicturesLibrary;
+       
             var folder = ApplicationData.Current.LocalFolder;
             var f =await folder.CreateFileAsync("aracom.txt", CreationCollisionOption.OpenIfExists);
             await FileIO.AppendTextAsync(f, Text1.Text + ";" + DateTime.Now.ToString() + Environment.NewLine);
+        }
+
+        private async void Button_Click2Async(object sender, RoutedEventArgs e)
+        {
+            var f = await StorageFile.GetFileFromApplicationUriAsync(new Uri("Assets/schwein.jpg"));
+            var fs=await f.OpenAsync(FileAccessMode.Read);
+            var bmp = new BitmapImage();
+            bmp.SetSource(fs);
+            img1.Source = bmp;
         }
     }
 }
