@@ -13,7 +13,18 @@
                 Click="Button_ClickAsync"/>
         <ListView 
             Name="listview1"
-            HorizontalAlignment="Left" Height="159" Margin="1,49,0,0" VerticalAlignment="Top" Width="597"/>
+            HorizontalAlignment="Left" Height="333" Margin="1,49,0,0" 
+            VerticalAlignment="Top" Width="597">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding Id}" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock Text="{Binding CompanyName}" Margin="100,0,0,0" Width="200" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock Text="{Binding ContactName}" Margin="350,0,0,0" HorizontalAlignment="Left"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </Grid>
 </Page>
