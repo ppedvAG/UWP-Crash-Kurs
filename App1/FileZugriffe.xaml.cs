@@ -40,7 +40,7 @@ namespace App1
 
         private async void Button_Click2Async(object sender, RoutedEventArgs e)
         {
-            var f = await StorageFile.GetFileFromApplicationUriAsync(new Uri("Assets/schwein.jpg"));
+            var f = await StorageFile.GetFileFromApplicationUriAsync(new Uri(this.BaseUri,"Assets/schwein.jpg"));
             var fs=await f.OpenAsync(FileAccessMode.Read);
             var bmp = new BitmapImage();
             bmp.SetSource(fs);
