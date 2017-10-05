@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -38,6 +39,19 @@ namespace App1
             liste = ob.Customers;
             listview1.ItemsSource = liste;
 
+        }
+
+        private async void ButtonSave_ClickAsync(object sender, RoutedEventArgs e)
+        {
+            var serializer = JsonSerializer.Create();
+            var f = await KnownFolders.MusicLibrary.CreateFileAsync("northwind.json", CreationCollisionOption.ReplaceExisting);
+            var sr = await f.OpenStreamForWriteAsync();
+            var tr =  new StreamWriter(sr);
+            using (var sw = new JsonTextWriter(tr))
+            {
+                serializer.Serialize(sw,liste);
+
+            }
         }
     }
 }
