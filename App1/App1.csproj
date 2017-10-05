@@ -112,6 +112,9 @@
     <Compile Include="northwindliste.xaml.cs">
       <DependentUpon>northwindliste.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OfflineListe.xaml.cs">
+      <DependentUpon>OfflineListe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="PersonView.xaml.cs">
       <DependentUpon>PersonView.xaml</DependentUpon>
@@ -163,6 +166,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="northwindliste.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OfflineListe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
