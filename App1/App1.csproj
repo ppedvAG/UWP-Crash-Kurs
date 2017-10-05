@@ -105,11 +105,16 @@
     <Compile Include="FileZugriffe.xaml.cs">
       <DependentUpon>FileZugriffe.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HannesVM.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="northwindliste.xaml.cs">
       <DependentUpon>northwindliste.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonView.xaml.cs">
+      <DependentUpon>PersonView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RSSFeed.xaml.cs">
@@ -158,6 +163,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="northwindliste.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
