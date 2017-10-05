@@ -34,11 +34,8 @@ namespace App1
         {
             var client = new HttpClient();
             var result= await client.GetStringAsync("http://northwind.servicestack.net/customers?format=json");
-           
-
-            var ob = JsonConvert.DeserializeObject<Rootobject>(result);
+             var ob = JsonConvert.DeserializeObject<Rootobject>(result);
             liste = ob.Customers;
-
             listview1.ItemsSource = liste;
 
         }
