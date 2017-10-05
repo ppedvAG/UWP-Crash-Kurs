@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="App1.StylesThemes"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <SolidColorBrush x:Key="HannesFill1" Color="Blue"/>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Ellipse HorizontalAlignment="Left" Height="342" Margin="215,187,0,0"
+                 VerticalAlignment="Top" Width="409"
+                 Fill="{StaticResource HannesFill1}"/>
+        <Button Content="Button" HorizontalAlignment="Left" 
+                Margin="770,118,0,0" VerticalAlignment="Top"
+                Background="{StaticResource HannesFill1}"/>
+
+    </Grid>
+</Page>

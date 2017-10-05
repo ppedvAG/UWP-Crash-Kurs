@@ -105,6 +105,9 @@
     <Compile Include="RSSFeed.xaml.cs">
       <DependentUpon>RSSFeed.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StylesThemes.xaml.cs">
+      <DependentUpon>StylesThemes.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -137,6 +140,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="RSSFeed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StylesThemes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
